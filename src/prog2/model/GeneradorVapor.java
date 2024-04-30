@@ -23,9 +23,7 @@ public class GeneradorVapor implements InComponent{
     }
 
     @Override
-    public void revisa(PaginaIncidencies p) {
-        
-    }
+    public void revisa(PaginaIncidencies p) {}
 
     @Override
     public float getCostOperatiu() {

@@ -4,6 +4,8 @@
  */
 package prog2.model;
 
+import prog2.vista.CentralUBException;
+
 /**
  *
  * @author Usuario
@@ -22,8 +24,9 @@ public class Reactor implements InComponent{
     }
     
     @Override
-    public void activa() throws Object {
-        active = true;
+    public void activa() throws CentralUBException {
+        if(temp > 1000) throw new CentralUBException("No es pot activar el reactor perque la seva temperatura supera els 1000 graus");
+        else active = true;
     }
 
     @Override
@@ -33,7 +36,10 @@ public class Reactor implements InComponent{
 
     @Override
     public void revisa(PaginaIncidencies p) {
-        hazlo
+        if(temp > 1000){
+            this.desactiva();
+            p.afegeixIncidencia("El reactor ha superat la temperatura màxima i s'ha desactivat");
+        }
     }
 
     @Override

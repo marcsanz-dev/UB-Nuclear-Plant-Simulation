@@ -4,6 +4,8 @@
  */
 package prog2.model;
 
+import prog2.vista.CentralUBException;
+
 /**
  *
  * @author Usuario
@@ -25,7 +27,7 @@ public class BombaRefrigerant implements InBombaRefrigerant{
     }
 
     @Override
-    public void activa() throws Object {
+    public void activa(){
         active = true;
     }
 
@@ -39,10 +41,12 @@ public class BombaRefrigerant implements InBombaRefrigerant{
         return active;
     }
 
-    @Override
-    public void revisa(Object p) {
-        int n = var_uni.seguentValor();
-        fora_serv = !(n > 20);
+    
+    public void revisa(PaginaIncidencies p) {
+        boolean prob = var_uni.seguentValor() > 20;
+        fora_serv = !prob;
+        active = prob;
+        if(!prob)p.afegeixIncidencia("La bomba " + id + " ha quedat fora de servei.");
     }
 
     @Override

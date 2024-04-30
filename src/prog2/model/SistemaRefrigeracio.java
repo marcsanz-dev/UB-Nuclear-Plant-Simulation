@@ -6,6 +6,7 @@ package prog2.model;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import prog2.vista.CentralUBException;
 
 
 /**
@@ -22,13 +23,13 @@ public class SistemaRefrigeracio implements InComponent{
     }
     
     @Override
-    public void activa() throws Object {
+    public void activa() throws CentralUBException{
         Iterator<BombaRefrigerant> it = bombes.iterator();
         while(it.hasNext()){
             BombaRefrigerant ac_bomba = it.next();
-            if(ac_bomba.getForaDeServei())
+            if(!ac_bomba.getForaDeServei())
             ac_bomba.activa();
-            else throw CentralUBException("La bomba no es pot activar perque es troba fora de servei");
+            else throw new CentralUBException("La bomba no es pot activar perque es troba fora de servei");
         }
     }
 
