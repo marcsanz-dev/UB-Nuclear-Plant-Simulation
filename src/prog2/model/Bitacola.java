@@ -16,6 +16,8 @@ public class Bitacola implements InBitacola{
     
     ArrayList<PaginaBitacola> pagines;
     
+    String prueba;
+    
     public Bitacola(){
         pagines = new ArrayList<PaginaBitacola>();
     }
