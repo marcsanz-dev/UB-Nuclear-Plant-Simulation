@@ -5,6 +5,7 @@
 package prog2.model;
 
 import java.util.List;
+import java.util.Iterator;
 
 /**
  *
@@ -63,6 +64,7 @@ public class Dades implements InDades{
      */
     private PaginaEconomica actualitzaEconomia(float demandaPotencia){
         // Completar 
+        
     }
     
     /**
@@ -106,59 +108,72 @@ public class Dades implements InDades{
 
     @Override
     public float getInsercioBarres() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return insercioBarres;
     }
 
     @Override
+    //Da error por el throws, no pone nada de incidencia ni accions no permeses por el numero de barres. Quitaria el throws.
     public void setInsercioBarres(float insercioBarres) throws Object {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        float insercioBarres_ = insercioBarres;
     }
 
     @Override
     public void activaReactor() throws Object {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (reactor.getTemp() < 1000) reactor.activa();
+        else throw CentralUBException("El reactor no es pot activar perquè té una temperatura per sobre dels 1000 graus.");
     }
 
     @Override
     public void desactivaReactor() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        reactor.desactiva();
     }
 
     @Override
     public Reactor mostraReactor() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return reactor;
     }
 
     @Override
+    //Hay que iterar en la lista de las bombas de sistemaRefirgeracio, no se com o hacer
     public void activaBomba(int id) throws Object {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Iterator<BombaRefrigerant> it = bombes.iterator();
+        while(it.hasNext()){
+            BombaRefrigerant ac_bomba = it.next();
+            if(ac_bomba.getId().equals(id));
+            ac_bomba.activa();
     }
 
     @Override
+    //Hay que iterar en la lista de las bombas de sistemaRefirgeracio, no se com o hacer
     public void desactivaBomba(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Iterator<BombaRefrigerant> it = bombes.iterator();
+        while(it.hasNext()){
+            BombaRefrigerant ac_bomba = it.next();
+            if(ac_bomba.getId().equals(id));
+            ac_bomba.desactiva();
     }
 
     @Override
-    public SistemaRefrigeracio mostraSistemaRefrigeracio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public SistemaRefrigeracio mostraSistemaRefrigeracio(){
+        return sistemaRefrigeracio;
     }
 
     @Override
     public float calculaPotencia() {
-        turbina.calculaOutput();
+        float potencia = turbina.calculaOutput();
+        return potencia;
     }
 
     @Override
     public PaginaEstat mostraEstat(float demandaPotencia) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        falta
     }
 
     @Override
     public Bitacola mostraBitacola() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return bitacola;
     }
-
+    
     @Override
     public List<PaginaIncidencies> mostraIncidencies() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

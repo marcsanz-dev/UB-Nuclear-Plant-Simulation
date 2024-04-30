@@ -8,6 +8,6 @@ package prog2.adaptador;
  *
  * @author Usuario
  */
-public class Adaptador {
-    
+public class Adaptador{
+    Dades dades;
 }
