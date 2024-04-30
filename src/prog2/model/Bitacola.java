@@ -33,12 +33,20 @@ public class Bitacola implements InBitacola{
 
     @Override
     public void afegeixPagina(PaginaBitacola p) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        pagines.add(p);
     }
 
     @Override
     public List<PaginaIncidencies> getIncidencies() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<PaginaIncidencies> incidencies = new ArrayList<PaginaIncidencies>();
+        Iterator<PaginaBitacola> it = pagines.iterator();
+        while(it.hasNext()){
+            PaginaBitacola pag_ac = it.next();
+            if(pag_ac instanceof PaginaIncidencies){
+                incidencies.add((PaginaIncidencies)pag_ac);
+            }
+        }
+        return incidencies;
     }
     
 }

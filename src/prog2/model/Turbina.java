@@ -23,9 +23,7 @@ public class Turbina implements InComponent{
     }
 
     @Override
-    public void revisa(PaginaIncidencies p) {
-        hazlo
-    }
+    public void revisa(PaginaIncidencies p) {}
 
     @Override
     public float getCostOperatiu() {

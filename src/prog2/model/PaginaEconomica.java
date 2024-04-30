@@ -11,8 +11,11 @@ package prog2.model;
 public class PaginaEconomica extends PaginaBitacola{
     float beneficis, penalitzacio, cost_op, guanys_acu;
     
-    public PaginaEconomica(){
-        super();
+    public PaginaEconomica(float beneficis_, float penalitzacio_, float cost_op_, float guanys_acu_){
+        beneficis = beneficis_;
+        penalitzacio = penalitzacio_;
+        cost_op = cost_op_;
+        guanys_acu = guanys_acu_;
     }
     
     public String toString(){

@@ -14,9 +14,10 @@ import java.util.Iterator;
 public class PaginaIncidencies extends PaginaBitacola{
     ArrayList<String> incidencies;
     
-    public PaginaIncidencies(){
-        super();
+    public PaginaIncidencies(int dia){
         incidencies = new ArrayList<String>();
+        super.setDia(dia);
+        he puesto un setter en bitacola del dia pq no entiendo pq el constructor de pagina incidencies en dades tiene como parametro "dia"
     }
     
     public void afegeixIncidencia(String descIncidencia){

@@ -4,10 +4,18 @@
  */
 package prog2.adaptador;
 
+import prog2.model.Dades;
+import prog2.vista.CentralUBException;
+
 /**
  *
  * @author Usuario
  */
 public class Adaptador{
     Dades dades;
+    
+    public void guardaDades(String camiDesti) throws CentralUBException{
+    }
+    public void carregaDades(String camiOrigen)throws CentralUBException{
+    }
 }

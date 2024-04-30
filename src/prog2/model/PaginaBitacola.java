@@ -16,5 +16,15 @@ public class PaginaBitacola {
     public PaginaBitacola(){
         dia++;
     }
+
+    public static int getDia() {
+        return dia;
+    }
+
+    public static void setDia(int dia) {
+        PaginaBitacola.dia = dia;
+    }
+    
+    
     
 }

@@ -4,8 +4,10 @@
  */
 package prog2.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
+import prog2.vista.CentralUBException;
 
 /**
  *
@@ -63,9 +65,24 @@ public class Dades implements InDades{
      * @param demandaPotencia Demanda de potència actual.
      */
     private PaginaEconomica actualitzaEconomia(float demandaPotencia){
-        // Completar 
+        float beneficis, penalitzacio = 0, cost_op, guanys_acu;
+        float potencia = this.calculaPotencia();
+        if(potencia > demandaPotencia){
+            beneficis = demandaPotencia;
+            penalitzacio = 200;
+        }
+        else{
+            beneficis = potencia;
+        }
+        cost_op = reactor.getCostOperatiu() + sistemaRefrigeracio.getCostOperatiu() + generadorVapor.getCostOperatiu() + turbina.getCostOperatiu();
+        guanys_acu = beneficis - penalitzacio - cost_op + guanysAcumulats;
+        
+        return new PaginaEconomica(beneficis, penalitzacio, cost_op, guanys_acu);
         
     }
+
+        
+
     
     /**
      * Actualitza l'estat de la central. El mètodo ha de establir la nova
@@ -76,6 +93,7 @@ public class Dades implements InDades{
      */
     private void actualitzaEstatCentral(PaginaIncidencies paginaIncidencies) {
         // Completar
+        cuidado no olvidar
     }
     
     public Bitacola finalitzaDia(float demandaPotencia) {
@@ -112,15 +130,13 @@ public class Dades implements InDades{
     }
 
     @Override
-    //Da error por el throws, no pone nada de incidencia ni accions no permeses por el numero de barres. Quitaria el throws.
-    public void setInsercioBarres(float insercioBarres) throws Object {
+    public void setInsercioBarres(float insercioBarres) throws CentralUBException {
         float insercioBarres_ = insercioBarres;
     }
 
     @Override
-    public void activaReactor() throws Object {
-        if (reactor.getTemp() < 1000) reactor.activa();
-        else throw CentralUBException("El reactor no es pot activar perquè té una temperatura per sobre dels 1000 graus.");
+    public void activaReactor() throws CentralUBException {
+        reactor.activa();
     }
 
     @Override
@@ -134,23 +150,27 @@ public class Dades implements InDades{
     }
 
     @Override
-    //Hay que iterar en la lista de las bombas de sistemaRefirgeracio, no se com o hacer
-    public void activaBomba(int id) throws Object {
+    public void activaBomba(int id) throws CentralUBException {
+        ArrayList<BombaRefrigerant> bombes = sistemaRefrigeracio.getBombes();
         Iterator<BombaRefrigerant> it = bombes.iterator();
         while(it.hasNext()){
             BombaRefrigerant ac_bomba = it.next();
-            if(ac_bomba.getId().equals(id));
+            if(ac_bomba.getId() == id);
             ac_bomba.activa();
+            return;
+        }
     }
 
     @Override
-    //Hay que iterar en la lista de las bombas de sistemaRefirgeracio, no se com o hacer
     public void desactivaBomba(int id) {
+        ArrayList<BombaRefrigerant> bombes = sistemaRefrigeracio.getBombes();
         Iterator<BombaRefrigerant> it = bombes.iterator();
         while(it.hasNext()){
             BombaRefrigerant ac_bomba = it.next();
-            if(ac_bomba.getId().equals(id));
+            if(ac_bomba.getId() == id);
             ac_bomba.desactiva();
+            return;
+        }
     }
 
     @Override
@@ -160,13 +180,23 @@ public class Dades implements InDades{
 
     @Override
     public float calculaPotencia() {
-        float potencia = turbina.calculaOutput();
+        float potencia = turbina.calculaOutput(
+                generadorVapor.calculaOutput(
+                sistemaRefrigeracio.calculaOutput(
+                reactor.calculaOutput(insercioBarres))));
         return potencia;
     }
 
     @Override
     public PaginaEstat mostraEstat(float demandaPotencia) {
-        falta
+        return new PaginaEstat(demandaPotencia, 
+                insercioBarres, 
+                reactor.calculaOutput(insercioBarres), 
+                sistemaRefrigeracio.calculaOutput(reactor.calculaOutput(insercioBarres)), 
+                generadorVapor.calculaOutput(sistemaRefrigeracio.calculaOutput(reactor.calculaOutput(insercioBarres))), 
+                calculaPotencia(), 
+                calculaPotencia()/demandaPotencia*100);
+        
     }
 
     @Override
@@ -176,6 +206,6 @@ public class Dades implements InDades{
     
     @Override
     public List<PaginaIncidencies> mostraIncidencies() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return bitacola.getIncidencies();
     }
 }

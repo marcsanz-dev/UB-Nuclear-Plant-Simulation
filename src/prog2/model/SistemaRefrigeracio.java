@@ -18,6 +18,14 @@ public class SistemaRefrigeracio implements InComponent{
     ArrayList<BombaRefrigerant> bombes;
     boolean active;
     
+    public SistemaRefrigeracio(){
+        bombes = new ArrayList<BombaRefrigerant>();
+    }
+    
+    public ArrayList<BombaRefrigerant> getBombes(){
+        return bombes;
+    }
+    
     public void afegirBomba(BombaRefrigerant bomba){
         bombes.add(bomba);
     }
