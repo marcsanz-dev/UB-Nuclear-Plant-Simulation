@@ -12,8 +12,9 @@ public class PaginaEstat extends PaginaBitacola{
     
     float demanda_pot, inser_barres, out_reactor, out_refri, out_vapor, out_turbina, demanda_pot_satis;
     
-    public PaginaEstat(float demanda_pot,float inser_barres,float out_reactor,
+    public PaginaEstat(int dia_,float demanda_pot,float inser_barres,float out_reactor,
             float out_refri,float out_vapor,float out_turbina,float demanda_pot_satis){
+        super(dia_);
         this.demanda_pot = demanda_pot;
         this.inser_barres = inser_barres;
         this.out_reactor = out_reactor;

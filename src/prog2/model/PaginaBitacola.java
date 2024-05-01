@@ -11,18 +11,18 @@ import java.util.List;
  * @author Usuario
  */
 public class PaginaBitacola {
-    static int dia = 0;
+    int dia;
     
-    public PaginaBitacola(){
-        dia++;
+    public PaginaBitacola(int dia_){
+        dia = dia_;
     }
 
-    public static int getDia() {
+    public int getDia() {
         return dia;
     }
 
-    public static void setDia(int dia) {
-        PaginaBitacola.dia = dia;
+    public void setDia(int dia_) {
+        dia = dia_;
     }
     
     

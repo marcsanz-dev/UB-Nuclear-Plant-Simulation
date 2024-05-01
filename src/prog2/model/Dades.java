@@ -77,7 +77,7 @@ public class Dades implements InDades{
         cost_op = reactor.getCostOperatiu() + sistemaRefrigeracio.getCostOperatiu() + generadorVapor.getCostOperatiu() + turbina.getCostOperatiu();
         guanys_acu = beneficis - penalitzacio - cost_op + guanysAcumulats;
         
-        return new PaginaEconomica(beneficis, penalitzacio, cost_op, guanys_acu);
+        return new PaginaEconomica(dia, beneficis, penalitzacio, cost_op, guanys_acu);
         
     }
 
@@ -92,8 +92,17 @@ public class Dades implements InDades{
      * @param paginaIncidencies Pàgina d'incidències.
      */
     private void actualitzaEstatCentral(PaginaIncidencies paginaIncidencies) {
-        // Completar
-        cuidado no olvidar
+        float temp = 30;
+        calculamos bn la temp¿?
+        if(temp < reactor.calculaOutput(insercioBarres) - sistemaRefrigeracio.calculaOutput(reactor.calculaOutput(insercioBarres))){
+            temp = reactor.calculaOutput(insercioBarres) - sistemaRefrigeracio.calculaOutput(reactor.calculaOutput(insercioBarres));
+        }
+        reactor.setTemp(temp);
+        reactor.revisa(paginaIncidencies);
+        sistemaRefrigeracio.revisa(paginaIncidencies);
+        generadorVapor.revisa(paginaIncidencies);
+        turbina.revisa(paginaIncidencies);
+        
     }
     
     public Bitacola finalitzaDia(float demandaPotencia) {
@@ -180,16 +189,15 @@ public class Dades implements InDades{
 
     @Override
     public float calculaPotencia() {
-        float potencia = turbina.calculaOutput(
+        return  turbina.calculaOutput(
                 generadorVapor.calculaOutput(
                 sistemaRefrigeracio.calculaOutput(
                 reactor.calculaOutput(insercioBarres))));
-        return potencia;
     }
 
     @Override
     public PaginaEstat mostraEstat(float demandaPotencia) {
-        return new PaginaEstat(demandaPotencia, 
+        return new PaginaEstat(dia,demandaPotencia, 
                 insercioBarres, 
                 reactor.calculaOutput(insercioBarres), 
                 sistemaRefrigeracio.calculaOutput(reactor.calculaOutput(insercioBarres)), 
