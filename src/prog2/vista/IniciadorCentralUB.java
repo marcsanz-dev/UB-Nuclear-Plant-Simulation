@@ -10,4 +10,12 @@ package prog2.vista;
  */
 public class IniciadorCentralUB {
     
+    public static void main(String[] args) {
+        
+        CentralUB central = new CentralUB();
+     
+        // Inicialitzem l'execució de la vista
+        central.gestioCentralUB();
+    }
+    
 }

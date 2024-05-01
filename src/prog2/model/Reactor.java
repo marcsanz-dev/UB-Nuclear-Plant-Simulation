@@ -12,8 +12,8 @@ import prog2.vista.CentralUBException;
  */
 public class Reactor implements InComponent{
     
-    float temp;
-    boolean active;
+    private float temp;
+    private boolean active;
     
     public void setTemp(float temp_){
         temp = temp_;

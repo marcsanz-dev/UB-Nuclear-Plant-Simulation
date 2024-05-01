@@ -15,8 +15,8 @@ import prog2.vista.CentralUBException;
  */
 public class SistemaRefrigeracio implements InComponent{
     
-    ArrayList<BombaRefrigerant> bombes;
-    boolean active;
+    private ArrayList<BombaRefrigerant> bombes;
+    private boolean active;
     
     public SistemaRefrigeracio(){
         bombes = new ArrayList<BombaRefrigerant>();

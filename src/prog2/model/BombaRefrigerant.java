@@ -12,9 +12,9 @@ import prog2.vista.CentralUBException;
  */
 public class BombaRefrigerant implements InBombaRefrigerant{
     
-    int id;
-    boolean active, fora_serv;
-    VariableUniforme var_uni;
+    private int id;
+    private boolean active, fora_serv;
+    private VariableUniforme var_uni;
     
     public BombaRefrigerant(VariableUniforme var_uni_, int id_){
         id = id_;

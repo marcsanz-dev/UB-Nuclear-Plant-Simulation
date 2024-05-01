@@ -11,7 +11,7 @@ import java.util.List;
  * @author Usuario
  */
 public class PaginaBitacola {
-    int dia;
+    private int dia;
     
     public PaginaBitacola(int dia_){
         dia = dia_;

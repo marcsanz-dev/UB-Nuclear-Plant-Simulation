@@ -10,7 +10,7 @@ package prog2.model;
  */
 public class PaginaEstat extends PaginaBitacola{
     
-    float demanda_pot, inser_barres, out_reactor, out_refri, out_vapor, out_turbina, demanda_pot_satis;
+    private float demanda_pot, inser_barres, out_reactor, out_refri, out_vapor, out_turbina, demanda_pot_satis;
     
     public PaginaEstat(int dia_,float demanda_pot,float inser_barres,float out_reactor,
             float out_refri,float out_vapor,float out_turbina,float demanda_pot_satis){
@@ -26,7 +26,7 @@ public class PaginaEstat extends PaginaBitacola{
     
     public String toString(){
         return"# Pàgina Estat\n" +
-"- Dia: " + dia + "\n" +
+"- Dia: " + super.getDia() + "\n" +
 "- Demanda de potencia: " + demanda_pot + "\n" +
 "- Inserció Barres: " + inser_barres + " %\n" +
 "- Output Reactor: " + out_reactor + " Graus\n" +

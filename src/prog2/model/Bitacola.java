@@ -14,8 +14,7 @@ import java.util.List;
  */
 public class Bitacola implements InBitacola{
     
-    ArrayList<PaginaBitacola> pagines;
-    
+    private ArrayList<PaginaBitacola> pagines;
     
     public Bitacola(){
         pagines = new ArrayList<PaginaBitacola>();

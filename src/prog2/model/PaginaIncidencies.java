@@ -12,7 +12,7 @@ import java.util.Iterator;
  * @author Usuario
  */
 public class PaginaIncidencies extends PaginaBitacola{
-    ArrayList<String> incidencies;
+    private ArrayList<String> incidencies;
     
     public PaginaIncidencies(int dia){
         super(dia);
@@ -25,7 +25,7 @@ public class PaginaIncidencies extends PaginaBitacola{
     
     public String toString(){
         String str = "# Pàgina Incidències\n" +
-"- Dia: " + dia + "\n";
+"- Dia: " + super.getDia() + "\n";
         Iterator<String> it = incidencies.iterator();
         while(it.hasNext()){
             String str_ac = it.next();

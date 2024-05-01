@@ -9,7 +9,7 @@ package prog2.model;
  * @author Usuario
  */
 public class PaginaEconomica extends PaginaBitacola{
-    float beneficis, penalitzacio, cost_op, guanys_acu;
+    private float beneficis, penalitzacio, cost_op, guanys_acu;
     
     public PaginaEconomica(int dia_,float beneficis_, float penalitzacio_, float cost_op_, float guanys_acu_){
         super(dia_);
@@ -21,7 +21,7 @@ public class PaginaEconomica extends PaginaBitacola{
     
     public String toString(){
         return "# Pàgina Econòmica\n" +
-"- Dia: " + dia +"\n" +
+"- Dia: " + super.getDia() +"\n" +
 "- Beneficis: " + beneficis + " Unitats Econòmiques\n" +
 "- Penalització Excés Producció: " + penalitzacio + " Unitats Econòmiques\n" +
 "- Cost Operatiu: " + cost_op + " Unitats Econòmiques\n" +

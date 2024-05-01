@@ -20,14 +20,14 @@ public class Dades implements InDades{
     public final static float PENALITZACIO_EXCES_POTENCIA = 200;
 
     // Afegir atributs:
-    VariableUniforme variableUniforme;
-    int insercioBarres, dia;
-    Reactor reactor;
-    SistemaRefrigeracio sistemaRefrigeracio;
-    GeneradorVapor generadorVapor;
-    Turbina turbina;
-    Bitacola bitacola;
-    float guanysAcumulats;
+    private VariableUniforme variableUniforme;
+    private int insercioBarres, dia;
+    private Reactor reactor;
+    private SistemaRefrigeracio sistemaRefrigeracio;
+    private GeneradorVapor generadorVapor;
+    private Turbina turbina;
+    private Bitacola bitacola;
+    private float guanysAcumulats;
     
     
 
@@ -92,11 +92,8 @@ public class Dades implements InDades{
      * @param paginaIncidencies Pàgina d'incidències.
      */
     private void actualitzaEstatCentral(PaginaIncidencies paginaIncidencies) {
-        float temp = 30;
-        calculamos bn la temp¿?
-        if(temp < reactor.calculaOutput(insercioBarres) - sistemaRefrigeracio.calculaOutput(reactor.calculaOutput(insercioBarres))){
-            temp = reactor.calculaOutput(insercioBarres) - sistemaRefrigeracio.calculaOutput(reactor.calculaOutput(insercioBarres));
-        }
+        float temp = reactor.calculaOutput(insercioBarres) - sistemaRefrigeracio.calculaOutput(reactor.calculaOutput(insercioBarres));
+        if(temp < 30 )temp = 30;
         reactor.setTemp(temp);
         reactor.revisa(paginaIncidencies);
         sistemaRefrigeracio.revisa(paginaIncidencies);
@@ -197,13 +194,17 @@ public class Dades implements InDades{
 
     @Override
     public PaginaEstat mostraEstat(float demandaPotencia) {
+        //Si la potencia realizada supera la demandada diremos que esta se ha 
+        //cumplido al 100% a pesar de que quizas se ha cumplido mas todavia
+        float porcentaje = calculaPotencia()/demandaPotencia*100;
+        if(porcentaje > 100) porcentaje = 100;
         return new PaginaEstat(dia,demandaPotencia, 
                 insercioBarres, 
                 reactor.calculaOutput(insercioBarres), 
                 sistemaRefrigeracio.calculaOutput(reactor.calculaOutput(insercioBarres)), 
                 generadorVapor.calculaOutput(sistemaRefrigeracio.calculaOutput(reactor.calculaOutput(insercioBarres))), 
                 calculaPotencia(), 
-                calculaPotencia()/demandaPotencia*100);
+                porcentaje);
         
     }
 
