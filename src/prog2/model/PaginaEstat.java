@@ -3,14 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package prog2.model;
-
-import java.io.Serializable;
-
 /**
  *
  * @author Usuario
  */
-public class PaginaEstat extends PaginaBitacola implements Serializable{
+public class PaginaEstat extends PaginaBitacola{
     
     private float demanda_pot, inser_barres, out_reactor, out_refri, out_vapor, out_turbina, demanda_pot_satis;
     

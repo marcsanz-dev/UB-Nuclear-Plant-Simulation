@@ -86,7 +86,7 @@ public class Adaptador implements Serializable{
             FileOutputStream fout = new FileOutputStream(fitxer);
             ObjectOutputStream oos = new ObjectOutputStream(fout);
 
-            oos.writeObject(this);
+            oos.writeObject(dades);
             
             oos.close();
             fout.close();

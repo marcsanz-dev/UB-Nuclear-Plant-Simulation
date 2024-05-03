@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package prog2.model;
-
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -12,7 +10,7 @@ import java.util.Iterator;
  *
  * @author Usuario
  */
-public class PaginaIncidencies extends PaginaBitacola implements Serializable{
+public class PaginaIncidencies extends PaginaBitacola{
     private ArrayList<String> incidencies;
     
     public PaginaIncidencies(int dia){
