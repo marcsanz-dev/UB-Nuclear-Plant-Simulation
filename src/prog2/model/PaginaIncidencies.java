@@ -18,15 +18,30 @@ import java.util.Iterator;
 public class PaginaIncidencies extends PaginaBitacola{
     private ArrayList<String> incidencies;
     
+    
+    /**
+     * Inicialitza el ArrayList d'incidencies de la Pagina d'Incidencies
+     * @param dia Objecte de tipus int
+     */
     public PaginaIncidencies(int dia){
         super(dia);
         incidencies = new ArrayList<String>();
     }
     
+    
+    /**
+     * Afegeix l'incidencia que rep com a paraetre a la llista d'incidencies
+     * @param descIncidencia Objecte de tipus String
+     */
     public void afegeixIncidencia(String descIncidencia){
         incidencies.add(descIncidencia);
     }
     
+    
+    /**
+     * Retorna un String amb la informacio de la pagina d'incidencies
+     * @return String
+     */
     public String toString(){
         String str = "# Pàgina Incidències\n" +
 "- Dia: " + super.getDia() + "\n";

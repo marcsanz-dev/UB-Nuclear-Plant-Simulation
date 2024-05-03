@@ -38,7 +38,7 @@ public class Dades implements InDades, Serializable{
     
     
     /**
-     * 
+     * Inicialitza els atributs de la classe Dades
      */
     public Dades(){
         // Inicialitza Atributs
@@ -72,6 +72,7 @@ public class Dades implements InDades, Serializable{
      * beneficis, penalització per excès de potència, costos operatius y 
      * guanys acumulats.
      * @param demandaPotencia Demanda de potència actual.
+     * @return PaginaEconomica
      */
     private PaginaEconomica actualitzaEconomia(float demandaPotencia){
         float beneficis, penalitzacio = 0, cost_op, guanys_acu;
@@ -111,6 +112,14 @@ public class Dades implements InDades, Serializable{
         
     }
     
+    
+    /**
+     * Duu a terme les accions relacionades amb la finalització d'un dia.
+     * Per això és necessari coneixer la demanda de potència actual per al dia
+     * en curs.
+     * @param demandaPotencia Demanda de potència actual de la central.
+     * @return Bitacola
+     */
     public Bitacola finalitzaDia(float demandaPotencia) {
         // Actualitza economia
         PaginaEconomica paginaEconomica = actualitzaEconomia(demandaPotencia);
@@ -148,27 +157,50 @@ public class Dades implements InDades, Serializable{
     public float getInsercioBarres() {
         return insercioBarres;
     }
-
+    
+    
+    /**
+     * Estableix el grau d'inserció de les barres de control en percentatge.
+     * @param insercioBarres Percentatge d'inserció de les barres de control.
+     */
     @Override
     public void setInsercioBarres(float insercioBarres) throws CentralUBException {
         this.insercioBarres = (int)insercioBarres;
     }
-
+    
+    
+     /**
+     * Activa el reactor de la central.
+     */
     @Override
     public void activaReactor() throws CentralUBException {
         reactor.activa();
     }
-
+    
+    
+     /**
+     * Desactiva el reactor de la central.
+     */
     @Override
     public void desactivaReactor() {
         reactor.desactiva();
     }
-
+    
+    
+    /**
+     * Retorna l'objecte que contè el reactor de la central.
+     * @return Reactor
+     */
     @Override
     public Reactor mostraReactor() {
         return reactor;
     }
-
+    
+    
+    /**
+     * Activa una bomba refrigerant amb Id donat com a paràmetre.
+     * @param id Identificador de la bomba que es vol activar.
+     */
     @Override
     public void activaBomba(int id) throws CentralUBException {
         ArrayList<BombaRefrigerant> bombes = sistemaRefrigeracio.getBombes();
@@ -181,7 +213,12 @@ public class Dades implements InDades, Serializable{
             }
         }
     }
-
+    
+    
+    /**
+     * Desactiva una bomba refrigerant amb Id donat com a paràmetre.
+     * @param id Identificador de la bomba que es vol activar.
+     */
     @Override
     public void desactivaBomba(int id) {
         ArrayList<BombaRefrigerant> bombes = sistemaRefrigeracio.getBombes();
@@ -194,12 +231,24 @@ public class Dades implements InDades, Serializable{
             }
         }
     }
-
+    
+    
+     /**
+     * Retorna l'objecte que contè el sistema de refrigeració de la central.
+     * @return SistemaRefrigeracio
+     */
     @Override
     public SistemaRefrigeracio mostraSistemaRefrigeracio(){
         return sistemaRefrigeracio;
     }
-
+    
+    
+    /**
+     * Retorna la potència generada per la central. Aquesta potència es 
+     * l'output de la turbina. Es pot consultar la Figura 2 a l'enunciat per
+     * veure els detalls.
+     * @return float
+     */
     @Override
     public float calculaPotencia() {
         return  turbina.calculaOutput(
@@ -207,7 +256,14 @@ public class Dades implements InDades, Serializable{
                 sistemaRefrigeracio.calculaOutput(
                 reactor.calculaOutput(insercioBarres))));
     }
-
+    
+    
+    /**
+     * Retorna una pàgina de estat per a la configuració actual de la central.
+     * Amb aquest propòsit és necessari coneixer la demanda de potència actual.
+     * @param demandaPotencia Demanda de potència actual.
+     * @return PaginaEstat
+     */
     @Override
     public PaginaEstat mostraEstat(float demandaPotencia) {
         
@@ -233,12 +289,23 @@ public class Dades implements InDades, Serializable{
                 porcentaje);
         
     }
-
+    
+    
+    /**
+     * Retorna la bitacola de la central.
+     * @return Bitacola
+     */
     @Override
     public Bitacola mostraBitacola() {
         return bitacola;
     }
     
+    
+    /**
+     * Retorna una llista amb totes les pàgines d'incidències de la bitàcola de
+     * la central.
+     * @return List<PaginaIncidencies>
+     */
     @Override
     public List<PaginaIncidencies> mostraIncidencies() {
         return bitacola.getIncidencies();

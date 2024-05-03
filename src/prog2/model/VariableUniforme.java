@@ -17,11 +17,21 @@ import java.util.Random;
  */
 public class VariableUniforme implements Serializable{
     private Random random;
-
+    
+    
+    /**
+     * Inicialitza l'atribut random
+     * @param seed Objecte de tipus long
+     */
     public VariableUniforme(long seed) {
         this.random = new Random(seed);
     }
-
+    
+    
+    /**
+     * Genera un valor random en l'interval 1-100
+     * @return int
+     */
     public int seguentValor() {
         return random.nextInt(100);
     }

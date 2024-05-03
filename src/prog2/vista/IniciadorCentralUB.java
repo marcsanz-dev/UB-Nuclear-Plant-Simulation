@@ -14,6 +14,11 @@ package prog2.vista;
  */
 public class IniciadorCentralUB {
     
+    
+    /**
+     * Mètode que té com a funció iniciar l'execució del programa.
+     * @param args Objecte de tipus Array d'Strings
+     */
     public static void main(String[] args) {
         
         CentralUB central = new CentralUB();
