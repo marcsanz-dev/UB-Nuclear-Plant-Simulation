@@ -9,6 +9,10 @@ import prog2.vista.CentralUBException;
 /**
  *
  * @author dortiz
+ * 
+ * Interficie de BombaRefrigerant, conté els mètodes 
+ * de la classe BombaRefirgerant.
+ * 
  */
 public interface InBombaRefrigerant {
     

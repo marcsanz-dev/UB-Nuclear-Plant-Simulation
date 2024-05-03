@@ -20,6 +20,11 @@ import prog2.vista.CentralUBException;
 /**
  *
  * @author Usuario
+ * 
+ * Aquesta classe fa de connexió entre el paquet model i el paquet vista,
+ * conté i implementa els mètodes de les diferents opcions que es poden 
+ * escollir des del mètode gestioCentralUB.
+ * 
  */
 public class Adaptador implements Serializable{
     private Dades dades = new Dades();

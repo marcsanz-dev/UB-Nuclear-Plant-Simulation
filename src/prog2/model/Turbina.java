@@ -9,6 +9,12 @@ import java.io.Serializable;
 /**
  *
  * @author Usuario
+ * 
+ * La classe Turbina implementa la interficie 
+ * InCompnent, conté els diferents mètodes que 
+ * s'implementen a la turbina de la central i 
+ * els diferents atributs que la defineixen.
+ * 
  */
 public class Turbina implements InComponent, Serializable{
     

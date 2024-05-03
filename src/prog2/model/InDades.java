@@ -12,6 +12,10 @@ import prog2.vista.CentralUBException;
 /**
  *
  * @author dortiz
+ * 
+ * Interficie de Dades, conté els mètodes de 
+ * la classe Dades.
+ * 
  */
 public interface InDades {
     

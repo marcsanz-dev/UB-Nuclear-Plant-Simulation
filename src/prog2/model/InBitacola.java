@@ -9,6 +9,10 @@ import java.util.List;
 /**
  *
  * @author dortiz
+ * 
+ * Interficie de Bitacola, conté els mètodes 
+ * de la classe Bitacola.
+ * 
  */
 public interface InBitacola {
     /**

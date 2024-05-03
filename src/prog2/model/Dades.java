@@ -13,6 +13,12 @@ import prog2.vista.CentralUBException;
 /**
  *
  * @author dortiz
+ * 
+ * La classe Dades implementa la interficie 
+ * InDades, conté els diferents mètodes que 
+ * que conté la interficie, però, ara ja 
+ * estan implementats.
+ * 
  */
 public class Dades implements InDades, Serializable{
     public final static long  VAR_UNIF_SEED = 123;

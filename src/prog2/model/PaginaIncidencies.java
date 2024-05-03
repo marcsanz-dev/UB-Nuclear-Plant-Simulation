@@ -9,6 +9,11 @@ import java.util.Iterator;
 /**
  *
  * @author Usuario
+ * 
+ * La classe PaginaIncidencies hereda de PaginaBitacola, 
+ * conté el seu propi constructor, el mètode per afegir 
+ * incidencies i el seu toString.
+ * 
  */
 public class PaginaIncidencies extends PaginaBitacola{
     private ArrayList<String> incidencies;

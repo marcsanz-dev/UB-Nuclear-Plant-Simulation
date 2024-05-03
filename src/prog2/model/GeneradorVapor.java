@@ -9,6 +9,12 @@ import java.io.Serializable;
 /**
  *
  * @author Usuario
+ * 
+ * La classe GeneradorVapor implementa la interficie 
+ * InCompnent, conté els diferents mètodes que 
+ * s'implementen al generador de vapor de la central i 
+ * els diferents atributs que el defineixen.
+ * 
  */
 public class GeneradorVapor implements InComponent, Serializable{
     

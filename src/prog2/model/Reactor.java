@@ -10,6 +10,12 @@ import prog2.vista.CentralUBException;
 /**
  *
  * @author Usuario
+ * 
+ * La classe Reactor implementa la interficie InCompnent, 
+ * conté els diferents mètodes que 
+ * s'implementen al reactor de la central i 
+ * els diferents atributs que el defineixen.
+ * 
  */
 public class Reactor implements InComponent, Serializable{
     

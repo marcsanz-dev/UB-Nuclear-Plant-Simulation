@@ -7,6 +7,10 @@ package prog2.vista;
 /**
  *
  * @author Usuario
+ * 
+ * La classe IniciadorCentralUB conté main del 
+ * nostre programa, per tal de inicialitzar el programa.
+ * 
  */
 public class IniciadorCentralUB {
     

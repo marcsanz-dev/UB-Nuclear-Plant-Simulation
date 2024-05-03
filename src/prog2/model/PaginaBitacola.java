@@ -10,6 +10,10 @@ import java.util.List;
 /**
  *
  * @author Usuario
+ * 
+ * La classe PaginaBitacola contés els mètodes contructor,
+ * consultor i modificador del seu únic atribut.
+ * 
  */
 public class PaginaBitacola implements Serializable{
     private int dia;

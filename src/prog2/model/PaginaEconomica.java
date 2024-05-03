@@ -7,6 +7,10 @@ package prog2.model;
 /**
  *
  * @author Usuario
+ * 
+ * La classe PaginaEconomica hereda de PaginaBitacola, 
+ * conté el seu propi constructor i el seu toString.
+ * 
  */
 public class PaginaEconomica extends PaginaBitacola{
     private float beneficis, penalitzacio, cost_op, guanys_acu;

@@ -10,6 +10,10 @@ import java.util.Random;
 /**
  *
  * @author dortiz
+ * 
+ * La classe VariableUniforme conté el seu 
+ * constructor i un mètode propi.
+ * 
  */
 public class VariableUniforme implements Serializable{
     private Random random;

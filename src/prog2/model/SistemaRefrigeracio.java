@@ -13,6 +13,13 @@ import prog2.vista.CentralUBException;
 /**
  *
  * @author Usuario
+ * 
+ * La classe SistemaRefrigeracio implementa la interficie 
+ * InCompnent, conté els diferents mètodes que 
+ * s'implementen al sistema de refrigeració de la central i 
+ * els diferents atributs que el defineixen.
+ * 
+ * 
  */
 public class SistemaRefrigeracio implements InComponent, Serializable{
     

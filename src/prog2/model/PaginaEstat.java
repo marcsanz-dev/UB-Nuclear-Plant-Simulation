@@ -6,6 +6,10 @@ package prog2.model;
 /**
  *
  * @author Usuario
+ * 
+ * La classe PaginaEstat hereda de PaginaBitacola, 
+ * conté el seu propi constructor i el seu toString.
+ * 
  */
 public class PaginaEstat extends PaginaBitacola{
     

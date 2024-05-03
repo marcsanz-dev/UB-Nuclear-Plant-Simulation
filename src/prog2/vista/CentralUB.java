@@ -10,6 +10,11 @@ import java.util.Scanner;
 /**
  *
  * @author dortiz
+ * 
+ * La classe CentralUB conté el seu propi constructor 
+ * i els mètodes per tal de poder imprimir el menú 
+ * principal del nostre programa.
+ * 
  */
 public class CentralUB {
     public final static float DEMANDA_MAX = 1600;

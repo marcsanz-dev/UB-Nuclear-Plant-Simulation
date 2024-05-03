@@ -10,6 +10,10 @@ import prog2.vista.CentralUBException;
 /**
  *
  * @author dortiz
+ * 
+ * Interficie de Component, conté els mètodes de 
+ * les classes que són components en la central.
+ * 
  */
 public interface InComponent {
     

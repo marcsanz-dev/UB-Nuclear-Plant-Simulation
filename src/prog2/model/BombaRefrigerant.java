@@ -10,6 +10,12 @@ import prog2.vista.CentralUBException;
 /**
  *
  * @author Usuario
+ * 
+ * La classe BombaRefrigerant implementa la interficie 
+ * InBombaRefrigerant, conté els diferents mètodes que 
+ * s'implementen a les Bombes refrigerants de la central i 
+ * els diferents atributs que les defineixen.
+ * 
  */
 public class BombaRefrigerant implements InBombaRefrigerant, Serializable{
     

@@ -7,6 +7,11 @@ package prog2.vista;
 /**
  *
  * @author joelm
+ * 
+ * La classe CentralUBException hereda de la classe Exception,
+ * aquesta classe conté el seu constructor per tal de 
+ * llançar les excepcions necessitades en el moment correcte.
+ * 
  */
 public class CentralUBException extends Exception{
     public CentralUBException(String message){

@@ -12,6 +12,11 @@ import java.util.List;
 /**
  *
  * @author Usuario
+ * 
+ * La classe Bitacola implementa la interficie InBitacola,
+ * crea un ArrayList de Pagines Bitacoles on es 
+ * guardarà tota la informació que passi en la Central dia a dia.
+ * 
  */
 public class Bitacola implements InBitacola, Serializable{
     
