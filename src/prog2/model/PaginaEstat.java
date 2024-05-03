@@ -5,7 +5,7 @@
 package prog2.model;
 /**
  *
- * @author Usuario
+ * @author Marc Sanz
  * 
  * La classe PaginaEstat hereda de PaginaBitacola, 
  * conté el seu propi constructor i el seu toString.

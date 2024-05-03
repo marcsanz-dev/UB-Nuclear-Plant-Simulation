@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Usuario
+ * @author Joel Moreno
  * 
  * La classe GeneradorVapor implementa la interficie 
  * InCompnent, conté els diferents mètodes que 

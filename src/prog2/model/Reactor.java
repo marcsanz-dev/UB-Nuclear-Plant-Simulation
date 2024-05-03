@@ -9,7 +9,7 @@ import prog2.vista.CentralUBException;
 
 /**
  *
- * @author Usuario
+ * @author Marc Sanz
  * 
  * La classe Reactor implementa la interficie InCompnent, 
  * conté els diferents mètodes que 

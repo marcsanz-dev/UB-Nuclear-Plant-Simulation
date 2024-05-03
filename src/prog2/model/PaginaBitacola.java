@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author Usuario
+ * @author Marc Sanz
  * 
  * La classe PaginaBitacola contés els mètodes contructor,
  * consultor i modificador del seu únic atribut.

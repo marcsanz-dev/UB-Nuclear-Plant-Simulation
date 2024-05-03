@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 /**
  *
- * @author Usuario
+ * @author Marc Sanz
  * 
  * La classe PaginaIncidencies hereda de PaginaBitacola, 
  * conté el seu propi constructor, el mètode per afegir 

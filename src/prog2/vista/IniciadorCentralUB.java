@@ -6,7 +6,7 @@ package prog2.vista;
 
 /**
  *
- * @author Usuario
+ * @author Marc Sanz
  * 
  * La classe IniciadorCentralUB conté main del 
  * nostre programa, per tal de inicialitzar el programa.

@@ -67,6 +67,7 @@ public class Dades implements InDades, Serializable{
     }
     
     /**
+     * @author Marc Sanz
      * Actualitza l'economia de la central. Genera una pàgina econòmica a 
      * partir de la demanda de potencia actual. Aquesta pàgina econòmica inclou 
      * beneficis, penalització per excès de potència, costos operatius y 
@@ -95,6 +96,7 @@ public class Dades implements InDades, Serializable{
 
     
     /**
+     * @author Joel Moreno
      * Actualitza l'estat de la central. El mètodo ha de establir la nova
      * temperatura del reactor i revisar els components de la central. Si
      * es troben incidències, s'han de registrar en la pàgina d'incidències
@@ -150,6 +152,7 @@ public class Dades implements InDades, Serializable{
     
     
     /**
+     * @author Joel Moreno
      * Retorna el grau d'inserció de les barres de control en percentatge.
      * @return float
      */
@@ -160,6 +163,7 @@ public class Dades implements InDades, Serializable{
     
     
     /**
+     * @author Joel Moreno
      * Estableix el grau d'inserció de les barres de control en percentatge.
      * @param insercioBarres Percentatge d'inserció de les barres de control.
      */
@@ -170,6 +174,7 @@ public class Dades implements InDades, Serializable{
     
     
      /**
+      * @author Joel Moreno
      * Activa el reactor de la central.
      */
     @Override
@@ -179,6 +184,7 @@ public class Dades implements InDades, Serializable{
     
     
      /**
+      * @author Joel Moreno
      * Desactiva el reactor de la central.
      */
     @Override
@@ -188,6 +194,7 @@ public class Dades implements InDades, Serializable{
     
     
     /**
+     * @author Joel Moreno
      * Retorna l'objecte que contè el reactor de la central.
      * @return Reactor
      */
@@ -198,6 +205,7 @@ public class Dades implements InDades, Serializable{
     
     
     /**
+     * @author Joel Moreno
      * Activa una bomba refrigerant amb Id donat com a paràmetre.
      * @param id Identificador de la bomba que es vol activar.
      */
@@ -216,6 +224,7 @@ public class Dades implements InDades, Serializable{
     
     
     /**
+     * @author Joel Moreno
      * Desactiva una bomba refrigerant amb Id donat com a paràmetre.
      * @param id Identificador de la bomba que es vol activar.
      */
@@ -234,6 +243,7 @@ public class Dades implements InDades, Serializable{
     
     
      /**
+      * @author Joel Moreno
      * Retorna l'objecte que contè el sistema de refrigeració de la central.
      * @return SistemaRefrigeracio
      */
@@ -244,6 +254,7 @@ public class Dades implements InDades, Serializable{
     
     
     /**
+     * @author Marc Sanz
      * Retorna la potència generada per la central. Aquesta potència es 
      * l'output de la turbina. Es pot consultar la Figura 2 a l'enunciat per
      * veure els detalls.
@@ -259,6 +270,7 @@ public class Dades implements InDades, Serializable{
     
     
     /**
+     * @author Marc Sanz
      * Retorna una pàgina de estat per a la configuració actual de la central.
      * Amb aquest propòsit és necessari coneixer la demanda de potència actual.
      * @param demandaPotencia Demanda de potència actual.
@@ -292,6 +304,7 @@ public class Dades implements InDades, Serializable{
     
     
     /**
+     * @author Marc Sanz
      * Retorna la bitacola de la central.
      * @return Bitacola
      */
@@ -302,9 +315,10 @@ public class Dades implements InDades, Serializable{
     
     
     /**
+     * @author Marc Sanz
      * Retorna una llista amb totes les pàgines d'incidències de la bitàcola de
      * la central.
-     * @return List<PaginaIncidencies>
+     * @return List
      */
     @Override
     public List<PaginaIncidencies> mostraIncidencies() {

@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author Usuario
+ * @author Joel Moreno
  * 
  * La classe Bitacola implementa la interficie InBitacola,
  * crea un ArrayList de Pagines Bitacoles on es 
@@ -39,7 +39,7 @@ public class Bitacola implements InBitacola, Serializable{
     /**
      * Obté una llista amb totes les pàgines d'incidències contingudes dins 
      * de la bitàcola
-     * @return List<PaginaIncidencies>
+     * @return List
      */
     @Override
     public List<PaginaIncidencies> getIncidencies() {

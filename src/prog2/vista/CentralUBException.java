@@ -6,7 +6,7 @@ package prog2.vista;
 
 /**
  *
- * @author joelm
+ * @author Joel Moreno
  * 
  * La classe CentralUBException hereda de la classe Exception,
  * aquesta classe conté el seu constructor per tal de 

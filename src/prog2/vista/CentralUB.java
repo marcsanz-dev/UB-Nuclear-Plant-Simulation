@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author dortiz
+ * @author dortiz, Joel Moreno, Marc Sanz
  * 
  * La classe CentralUB conté el seu propi constructor 
  * i els mètodes per tal de poder imprimir el menú 

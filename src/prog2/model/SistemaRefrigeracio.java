@@ -12,7 +12,7 @@ import prog2.vista.CentralUBException;
 
 /**
  *
- * @author Usuario
+ * @author Marc Sanz
  * 
  * La classe SistemaRefrigeracio implementa la interficie 
  * InCompnent, conté els diferents mètodes que 
@@ -35,7 +35,7 @@ public class SistemaRefrigeracio implements InComponent, Serializable{
     /**
      * Retorna l'array de bombes refrigerants que té 
      * el sistema de refrigeració
-     * @return ArrayList<BombaRefrigerant>
+     * @return ArrayList
      */
     public ArrayList<BombaRefrigerant> getBombes(){
         return bombes;

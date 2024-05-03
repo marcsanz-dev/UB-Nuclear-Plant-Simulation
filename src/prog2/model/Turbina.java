@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Usuario
+ * @author Marc Sanz
  * 
  * La classe Turbina implementa la interficie 
  * InCompnent, conté els diferents mètodes que 

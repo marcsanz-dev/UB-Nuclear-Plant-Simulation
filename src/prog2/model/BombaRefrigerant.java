@@ -9,7 +9,7 @@ import prog2.vista.CentralUBException;
 
 /**
  *
- * @author Usuario
+ * @author Joel Moreno
  * 
  * La classe BombaRefrigerant implementa la interficie 
  * InBombaRefrigerant, conté els diferents mètodes que 
@@ -24,10 +24,10 @@ public class BombaRefrigerant implements InBombaRefrigerant, Serializable{
     private VariableUniforme var_uni;
     
     /**
-     *Inicialitza els atributs de bomba refrigerant
-     * @param var_uni Objecte de tipus VariableUniforme
+     * Inicialitza els atributs de bomba refrigerant
+     * @param var_uni_ Objecte de tipus VariableUniforme
      * @param id_ Objecte de tipus int
-    */
+     */
     public BombaRefrigerant(VariableUniforme var_uni_, int id_){
         id = id_;
         var_uni = var_uni_;
