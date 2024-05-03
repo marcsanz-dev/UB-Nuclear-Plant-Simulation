@@ -10,7 +10,6 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import prog2.model.Dades;
@@ -28,47 +27,93 @@ import prog2.vista.CentralUBException;
  */
 public class Adaptador implements Serializable{
     private Dades dades = new Dades();
-    
+    /**
+     * Retorna un String que diu el porcentatge 
+     * de barres que s'han inserit.
+     * @return String
+     */
     public String opcio1_1(){
         return "S'ha inserit un " + dades.getInsercioBarres() + " % de les barres";
     }
-    
+    /**
+     * Declara la quantitat de barres que 
+     * té el nostre objecte dades amb el parametre 
+     * passat.
+     * @param barres
+     * @throws CentralUBException 
+     */
     public void opcio1_2(float barres)throws CentralUBException{
         dades.setInsercioBarres(barres);
     }
-    
+    /**
+     * Activa el reactor.
+     * @throws CentralUBException 
+     */
     public void opcio2_1()throws CentralUBException{
         dades.activaReactor();
     }
-    
+    /**
+     * Desactiva el reactor.
+     * @throws CentralUBException 
+     */
     public void opcio2_2()throws CentralUBException{
         dades.desactivaReactor();
     }
-    
+    /**
+     * Retorna un String amb tota la informació 
+     * del reactor.
+     * @return String
+     */
     public String opcio2_3(){
         return dades.mostraReactor().toString();
     }
-    
+    /**
+     * Activa la bomba que té l'id passat per parametre.
+     * @param id
+     * @throws CentralUBException 
+     */
     public void opcio3_1(int id)throws CentralUBException{
         dades.activaBomba(id);
     }
-    
+    /**
+     * Desactiva la bomba que té l'id passat per parametre.
+     * @param id
+     * @throws CentralUBException 
+     */
     public void opcio3_2(int id)throws CentralUBException{
         dades.desactivaBomba(id);
     }
-    
+    /**
+     * Retorna un String amb tota la informació
+     * del sistema de refrigeració.
+     * @return String
+     */
     public String opcio3_3(){
         return dades.mostraSistemaRefrigeracio().toString();
     }
-    
+    /**
+     * Retorna un String amb tota la informació de
+     * l'estat de la central segons una demanda de 
+     * potencia passada per paràmetre.
+     * @param demandaPotencia
+     * @return String
+     */
     public String opcio4(float demandaPotencia){
         return dades.mostraEstat(demandaPotencia).toString();
     }
-    
+    /**
+     * Retorna un String amb tota la informació de 
+     * totes les pagines del dia al que ens trobem.
+     * @return String
+     */
     public String opcio5(){
         return dades.mostraBitacola().toString();
     }
-    
+    /**
+     * Retorna un String amb la informació de totes les 
+     * pàgines d'incidéncies.
+     * @return String
+     */
     public String opcio6(){
         String str = "";
         List<PaginaIncidencies> incidencies = dades.mostraIncidencies();
@@ -79,11 +124,22 @@ public class Adaptador implements Serializable{
         }
         return str;
     }
-    
+    /**
+     * Actualitza tots els valors conforme s'acabat el dia
+     * i et retorna un Stirng amb la informació resumen 
+     * d'aquell dia.
+     * @param demandaPotencia
+     * @return String
+     */
     public String finalitzaDia(float demandaPotencia){
         return dades.finalitzaDia(demandaPotencia).toString();
     }
-    
+    /**
+     * Guarda les dades de la central a l'arxiu passat per 
+     * paràmetre.
+     * @param camiDesti
+     * @throws CentralUBException 
+     */
     public void guardaDades(String camiDesti) throws CentralUBException{
         File fitxer = new File(camiDesti);
                 
@@ -100,6 +156,12 @@ public class Adaptador implements Serializable{
             System.out.println(e);
         }
     }
+    /**
+     * Recupera les dades de la Central d'una arxiu passat per
+     * paràmetre.
+     * @param camiOrigen
+     * @throws CentralUBException 
+     */
     public void carregaDades(String camiOrigen)throws CentralUBException{
         File fitxer = new File(camiOrigen);
         Dades model = null;

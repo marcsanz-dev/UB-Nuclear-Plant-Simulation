@@ -14,6 +14,11 @@ package prog2.vista;
  * 
  */
 public class CentralUBException extends Exception{
+    /**
+     * Declara com a missatge d'error l'introduit 
+     * com a parametre.
+     * @param message 
+     */
     public CentralUBException(String message){
         super(message);
     }
