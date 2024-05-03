@@ -65,11 +65,11 @@ public class CentralUB {
                         break;
                         
                     case OPCIO2:
-                        
+                        submenu2();
                         break;
                         
                     case OPCIO3:
-                        
+                        submenu3();
                         break;
                         
                     case OPCIO4:
@@ -152,7 +152,7 @@ public class CentralUB {
         String[] opciones2 = {"Activar Reactor", "Desactivar Reactor", 
                 "Mostrar Estat", "Sortir"};
         try{
-            Menu<OpcionsSubMenu2> menu = new Menu<OpcionsSubMenu2>("gestió barres de control", OpcionsSubMenu2.values());
+            Menu<OpcionsSubMenu2> menu = new Menu<OpcionsSubMenu2>("gestió reactor", OpcionsSubMenu2.values());
             menu.setDescripcions(opciones2);
             Scanner sc = new Scanner(System.in);
             OpcionsSubMenu2 opcio = null;
@@ -188,7 +188,7 @@ public class CentralUB {
         String[] opciones3 = {"Activar Bomba", "Desactivar Bomba", 
             "Mostrar Estat", "Sortir"};
         try{
-            Menu<OpcionsSubMenu3> menu = new Menu<OpcionsSubMenu3>("gestió barres de control", OpcionsSubMenu3.values());
+            Menu<OpcionsSubMenu3> menu = new Menu<OpcionsSubMenu3>("gestió sistema de refrigeració", OpcionsSubMenu3.values());
             menu.setDescripcions(opciones3);
             Scanner sc = new Scanner(System.in);
             OpcionsSubMenu3 opcio = null;

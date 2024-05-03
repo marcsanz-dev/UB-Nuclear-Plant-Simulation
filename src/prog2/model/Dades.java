@@ -4,6 +4,7 @@
  */
 package prog2.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
@@ -13,7 +14,7 @@ import prog2.vista.CentralUBException;
  *
  * @author dortiz
  */
-public class Dades implements InDades{
+public class Dades implements InDades, Serializable{
     public final static long  VAR_UNIF_SEED = 123;
     public final static float GUANYS_INICIALS = 0;
     public final static float PREU_UNITAT_POTENCIA = 1;
@@ -137,7 +138,7 @@ public class Dades implements InDades{
 
     @Override
     public void setInsercioBarres(float insercioBarres) throws CentralUBException {
-        float insercioBarres_ = insercioBarres;
+        this.insercioBarres = (int)insercioBarres;
     }
 
     @Override
@@ -161,9 +162,10 @@ public class Dades implements InDades{
         Iterator<BombaRefrigerant> it = bombes.iterator();
         while(it.hasNext()){
             BombaRefrigerant ac_bomba = it.next();
-            if(ac_bomba.getId() == id);
+            if(ac_bomba.getId() == id){
             ac_bomba.activa();
             return;
+            }
         }
     }
 
@@ -173,9 +175,10 @@ public class Dades implements InDades{
         Iterator<BombaRefrigerant> it = bombes.iterator();
         while(it.hasNext()){
             BombaRefrigerant ac_bomba = it.next();
-            if(ac_bomba.getId() == id);
+            if(ac_bomba.getId() == id){
             ac_bomba.desactiva();
             return;
+            }
         }
     }
 

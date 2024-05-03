@@ -4,13 +4,14 @@
  */
 package prog2.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author Usuario
  */
-public class PaginaBitacola {
+public class PaginaBitacola implements Serializable{
     private int dia;
     
     public PaginaBitacola(int dia_){

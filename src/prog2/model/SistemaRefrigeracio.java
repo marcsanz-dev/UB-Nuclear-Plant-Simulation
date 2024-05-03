@@ -4,6 +4,7 @@
  */
 package prog2.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import prog2.vista.CentralUBException;
@@ -13,7 +14,7 @@ import prog2.vista.CentralUBException;
  *
  * @author Usuario
  */
-public class SistemaRefrigeracio implements InComponent{
+public class SistemaRefrigeracio implements InComponent, Serializable{
     
     private ArrayList<BombaRefrigerant> bombes;
     private boolean active;
@@ -35,9 +36,7 @@ public class SistemaRefrigeracio implements InComponent{
         Iterator<BombaRefrigerant> it = bombes.iterator();
         while(it.hasNext()){
             BombaRefrigerant ac_bomba = it.next();
-            if(!ac_bomba.getForaDeServei())
             ac_bomba.activa();
-            else throw new CentralUBException("La bomba no es pot activar perque es troba fora de servei");
         }
     }
 
@@ -75,6 +74,16 @@ public class SistemaRefrigeracio implements InComponent{
             }
         }
         return Math.min(input,250*n);
+    }
+    
+    public String toString(){
+        String str = "";
+        Iterator<BombaRefrigerant> it = bombes.iterator();
+        while(it.hasNext()){
+            BombaRefrigerant ac_bomba = it.next();
+            str += ac_bomba.toString();
+        }
+        return str;
     }
     
 }

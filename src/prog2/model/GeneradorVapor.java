@@ -4,11 +4,13 @@
  */
 package prog2.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Usuario
  */
-public class GeneradorVapor implements InComponent{
+public class GeneradorVapor implements InComponent, Serializable{
     
     private boolean active;
 

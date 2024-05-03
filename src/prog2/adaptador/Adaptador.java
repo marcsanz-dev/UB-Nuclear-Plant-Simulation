@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -20,8 +21,8 @@ import prog2.vista.CentralUBException;
  *
  * @author Usuario
  */
-public class Adaptador{
-    private Dades dades;
+public class Adaptador implements Serializable{
+    private Dades dades = new Dades();
     
     public String opcio1_1(){
         return "S'ha inserit un " + dades.getInsercioBarres() + " % de les barres";

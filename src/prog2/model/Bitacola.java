@@ -4,6 +4,7 @@
  */
 package prog2.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
  *
  * @author Usuario
  */
-public class Bitacola implements InBitacola{
+public class Bitacola implements InBitacola, Serializable{
     
     private ArrayList<PaginaBitacola> pagines;
     

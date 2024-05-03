@@ -4,13 +4,14 @@
  */
 package prog2.model;
 
+import java.io.Serializable;
 import prog2.vista.CentralUBException;
 
 /**
  *
  * @author Usuario
  */
-public class BombaRefrigerant implements InBombaRefrigerant{
+public class BombaRefrigerant implements InBombaRefrigerant, Serializable{
     
     private int id;
     private boolean active, fora_serv;
@@ -27,8 +28,9 @@ public class BombaRefrigerant implements InBombaRefrigerant{
     }
 
     @Override
-    public void activa(){
-        active = true;
+    public void activa()throws CentralUBException{
+        if(!getForaDeServei())active = true;
+        else throw new CentralUBException("La bomba no es pot activar perque es troba fora de servei");
     }
 
     @Override
@@ -55,7 +57,7 @@ public class BombaRefrigerant implements InBombaRefrigerant{
     }
     
     public String toString(){
-        return "Id=" + id + ", Activat=" + active + ", Fora de servei=" + fora_serv;
+        return "Id=" + id + ", Activat=" + active + ", Fora de servei=" + fora_serv + "\n";
     }
     
 }

@@ -4,11 +4,13 @@
  */
 package prog2.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Usuario
  */
-public class PaginaEstat extends PaginaBitacola{
+public class PaginaEstat extends PaginaBitacola implements Serializable{
     
     private float demanda_pot, inser_barres, out_reactor, out_refri, out_vapor, out_turbina, demanda_pot_satis;
     

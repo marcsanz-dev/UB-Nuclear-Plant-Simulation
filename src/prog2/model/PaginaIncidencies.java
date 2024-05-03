@@ -4,6 +4,7 @@
  */
 package prog2.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -11,7 +12,7 @@ import java.util.Iterator;
  *
  * @author Usuario
  */
-public class PaginaIncidencies extends PaginaBitacola{
+public class PaginaIncidencies extends PaginaBitacola implements Serializable{
     private ArrayList<String> incidencies;
     
     public PaginaIncidencies(int dia){

@@ -4,11 +4,13 @@
  */
 package prog2.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Usuario
  */
-public class PaginaEconomica extends PaginaBitacola{
+public class PaginaEconomica extends PaginaBitacola implements Serializable{
     private float beneficis, penalitzacio, cost_op, guanys_acu;
     
     public PaginaEconomica(int dia_,float beneficis_, float penalitzacio_, float cost_op_, float guanys_acu_){

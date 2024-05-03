@@ -4,13 +4,14 @@
  */
 package prog2.model;
 
+import java.io.Serializable;
 import prog2.vista.CentralUBException;
 
 /**
  *
  * @author Usuario
  */
-public class Reactor implements InComponent{
+public class Reactor implements InComponent, Serializable{
     
     private float temp;
     private boolean active;
@@ -21,6 +22,11 @@ public class Reactor implements InComponent{
     
     public float getTemp(){
         return temp;
+    }
+
+    @Override
+    public String toString() {
+        return "Reactor{" + "temp=" + temp + ", active=" + active + '}';
     }
     
     @Override
