@@ -194,16 +194,26 @@ public class Dades implements InDades{
 
     @Override
     public PaginaEstat mostraEstat(float demandaPotencia) {
+        
+        float calculaPotencia = calculaPotencia(), 
+            out_reactor = reactor.calculaOutput(insercioBarres), 
+            out_sistemaRefrigeracio = sistemaRefrigeracio.calculaOutput(out_reactor),
+            out_generadorVapor = generadorVapor.calculaOutput(out_sistemaRefrigeracio),
+            out_turbina = calculaPotencia,
+            porcentaje = calculaPotencia/demandaPotencia*100;
+        
         //Si la potencia realizada supera la demandada diremos que esta se ha 
         //cumplido al 100% a pesar de que quizas se ha cumplido mas todavia
-        float porcentaje = calculaPotencia()/demandaPotencia*100;
+        
         if(porcentaje > 100) porcentaje = 100;
-        return new PaginaEstat(dia,demandaPotencia, 
+        
+        return new PaginaEstat(dia,
+                demandaPotencia, 
                 insercioBarres, 
-                reactor.calculaOutput(insercioBarres), 
-                sistemaRefrigeracio.calculaOutput(reactor.calculaOutput(insercioBarres)), 
-                generadorVapor.calculaOutput(sistemaRefrigeracio.calculaOutput(reactor.calculaOutput(insercioBarres))), 
-                calculaPotencia(), 
+                out_reactor, 
+                out_sistemaRefrigeracio, 
+                out_generadorVapor, 
+                out_turbina, 
                 porcentaje);
         
     }

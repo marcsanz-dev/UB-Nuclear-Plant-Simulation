@@ -73,7 +73,7 @@ public class CentralUB {
                         break;
                         
                     case OPCIO4:
-                        adaptador.opcio4(demandaPotencia);
+                        System.out.println(adaptador.opcio4(demandaPotencia));
                         break;
                         
                     case OPCIO5:
