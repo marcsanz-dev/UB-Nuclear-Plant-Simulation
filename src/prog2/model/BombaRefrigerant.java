@@ -23,10 +23,18 @@ public class BombaRefrigerant implements InBombaRefrigerant, Serializable{
     private boolean active, fora_serv;
     private VariableUniforme var_uni;
     
+    /**
+     * 
+    */
     public BombaRefrigerant(VariableUniforme var_uni_, int id_){
         id = id_;
         var_uni = var_uni_;
     }
+    
+    /**
+     * Retorna l'identificador numèric de la bomba refrigerant.
+     * @return int
+     */
 
     @Override
     public int getId() {

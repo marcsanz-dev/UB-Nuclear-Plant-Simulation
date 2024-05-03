@@ -26,21 +26,21 @@ public class Bitacola implements InBitacola, Serializable{
         pagines = new ArrayList<PaginaBitacola>();
     }
     
-    public String toString(){
-        String str = "";
-        Iterator<PaginaBitacola> it = pagines.iterator();
-        while(it.hasNext()){
-            PaginaBitacola pag_ac = it.next();
-            str += pag_ac.toString() + "\n";
-        }
-        return str;
-    }
-
+    /**
+     * Afegeix una pagina a la bitàcola.
+     * @param p Objecte de tipus PaginaBitacola
+     */
     @Override
     public void afegeixPagina(PaginaBitacola p) {
         pagines.add(p);
     }
-
+    
+    
+    /**
+     * Obté una llista amb totes les pàgines d'incidències contingudes dins 
+     * de la bitàcola
+     * @return List<PaginaIncidencies>
+     */
     @Override
     public List<PaginaIncidencies> getIncidencies() {
         ArrayList<PaginaIncidencies> incidencies = new ArrayList<PaginaIncidencies>();
@@ -52,6 +52,21 @@ public class Bitacola implements InBitacola, Serializable{
             }
         }
         return incidencies;
+    }
+    
+    /**
+     * Retorna un String amb tota la informació de totes les pàgines que te la 
+     * bitacola
+     * @return String
+    */
+    public String toString(){
+        String str = "";
+        Iterator<PaginaBitacola> it = pagines.iterator();
+        while(it.hasNext()){
+            PaginaBitacola pag_ac = it.next();
+            str += pag_ac.toString() + "\n";
+        }
+        return str;
     }
     
 }
