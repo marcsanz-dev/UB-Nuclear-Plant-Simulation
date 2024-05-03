@@ -37,7 +37,9 @@ public class Dades implements InDades, Serializable{
     private float guanysAcumulats;
     
     
-
+    /**
+     * 
+     */
     public Dades(){
         // Inicialitza Atributs
         this.variableUniforme = new VariableUniforme(VAR_UNIF_SEED);
@@ -136,7 +138,12 @@ public class Dades implements InDades, Serializable{
         bitacolaDia.afegeixPagina(paginaIncidencies);
         return bitacolaDia;
     }
-
+    
+    
+    /**
+     * Retorna el grau d'inserció de les barres de control en percentatge.
+     * @return float
+     */
     @Override
     public float getInsercioBarres() {
         return insercioBarres;
