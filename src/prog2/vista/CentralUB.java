@@ -31,7 +31,10 @@ public class CentralUB {
     
     private Adaptador adaptador = new Adaptador();
     
-    /* Constructor*/
+    /**
+     * Inicialitza els atributs de la classe CentralUB, 
+     * creant un objecte de tipus VariableNormal 
+     */
     public CentralUB() {
         variableNormal = new VariableNormal(VAR_NORM_MEAN, VAR_NORM_STD, VAR_NORM_SEED);
         demandaPotencia = generaDemandaPotencia();
@@ -39,7 +42,9 @@ public class CentralUB {
         // Afegir codi adicional si fos necessari:
 
     }
-    
+    /**
+     * Mètode que gestiona el Menú de la central
+     */
     public void gestioCentralUB() {
         // Mostrar missatge inicial
         System.out.println("Benvingut a la planta PWR de la UB \n");
@@ -117,6 +122,10 @@ public class CentralUB {
         
     }
     
+    
+    /**
+     * Mètode que controla el submenú de l'opció 1.
+     */
     private void submenu1(){
         enum OpcionsSubMenu1{OPCIO1, OPCIO2,OPCIO3};
         String[] opciones1 = {"Obtenir Inserció Barres", 
@@ -152,6 +161,10 @@ public class CentralUB {
         }
     }
     
+    
+    /**
+     * Mètode que controla el submenú de l'opció 2.
+     */
     private void submenu2(){
         enum OpcionsSubMenu2{OPCIO1, OPCIO2,OPCIO3,OPCIO4};
         String[] opciones2 = {"Activar Reactor", "Desactivar Reactor", 
@@ -188,6 +201,10 @@ public class CentralUB {
         }
     }
     
+    
+    /**
+     * Mètode que controla el submenú de l'opció 3.
+     */
     private void submenu3(){
         enum OpcionsSubMenu3{OPCIO1, OPCIO2,OPCIO3,OPCIO4};
         String[] opciones3 = {"Activar Bomba", "Desactivar Bomba", 
@@ -229,6 +246,11 @@ public class CentralUB {
         }
     }
     
+    
+    /**
+     * Mètode que genera la demanda de potència
+     * @return float
+     */
     private float generaDemandaPotencia(){
         float valor = Math.round(variableNormal.seguentValor());
         if (valor > DEMANDA_MAX)
@@ -240,6 +262,10 @@ public class CentralUB {
                 return valor;
     }
     
+    
+    /**
+     * Mètode que té com a funció finalitzar el dia a la central.
+     */
     private void finalitzaDia() {
         // Finalitzar dia i imprimir informacio de la central
         String info = new String();

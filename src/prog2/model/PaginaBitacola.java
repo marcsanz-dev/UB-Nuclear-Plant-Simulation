@@ -18,14 +18,28 @@ import java.util.List;
 public class PaginaBitacola implements Serializable{
     private int dia;
     
+    /**
+     * Inicialitza els atributs de la classe PaginaBitacola
+     * @param dia_ Objecte de tipus int
+     */
     public PaginaBitacola(int dia_){
         dia = dia_;
     }
-
+    
+    
+    /**
+     * Retorna el dia que té registrat la pagina bitacola
+     * @return int
+     */
     public int getDia() {
         return dia;
     }
-
+    
+    
+    /**
+     * Modifica el dia que té registrat la pagina bitacola
+     * @param dia_ Objecte de tipus int
+     */
     public void setDia(int dia_) {
         dia = dia_;
     }
