@@ -17,7 +17,7 @@ A management simulation software for a nuclear power plant ("Unitat de Biomonito
 ### System Details
 | Data Management | Status & Incidents |
 | :---: | :---: |
-| <img src="PEGAR_ENLACE_FOTO_GESTION_O_DATOS" width="400"> | <img src="PEGAR_ENLACE_FOTO_INCIDENCIAS" width="400"> |
+| <img src="https://github.com/marcsanz-dev/UB-Nuclear-Plant-Simulation/blob/main/Interacciones.png" width="400"> | <img src="PEGAR_ENLACE_FOTO_INCIDENCIAS" width="400"> |
 
 *Screenshots showing the persistence menu and the incident logging system.*
 
