@@ -12,7 +12,7 @@ A management simulation software for a nuclear power plant ("Unitat de Biomonito
 ## 📸 Interface Gallery
 
 ### Main Control Panel
-<img src="[PEGAR_AQUI_ENLACE_FOTO_CENTRAL_GRANDE](https://github.com/marcsanz-dev/UB-Nuclear-Plant-Simulation/blob/main/Pagina_principal.png)" width="100%">
+<img src="https://github.com/marcsanz-dev/UB-Nuclear-Plant-Simulation/blob/main/Pagina_principal.png" width="100%">
 
 ### System Details
 | Data Management | Status & Incidents |
