@@ -15,9 +15,10 @@ A management simulation software for a nuclear power plant ("Unitat de Biomonito
 <img src="https://github.com/marcsanz-dev/UB-Nuclear-Plant-Simulation/blob/main/Pagina_principal.png" width="100%">
 
 ### System Details
-| Data Management | Status & Incidents |
+| Manual Control Deck | Information & Logs Hub |
 | :---: | :---: |
-| <img src="https://github.com/marcsanz-dev/UB-Nuclear-Plant-Simulation/blob/main/Interacciones.png" width="400"> | <img src="PEGAR_ENLACE_FOTO_INCIDENCIAS" width="400"> |
+| <img src="https://github.com/marcsanz-dev/UB-Nuclear-Plant-Simulation/blob/main/Interacciones.png" width="400"> | <img src="https://github.com/marcsanz-dev/UB-Nuclear-Plant-Simulation/blob/main/Informacion.png" width="400"> |
+| *Real-time reactor adjustments (Rod insertion, Pumps)* | *Access to logs, status reports, and incident history* |
 
 *Screenshots showing the persistence menu and the incident logging system.*
 
