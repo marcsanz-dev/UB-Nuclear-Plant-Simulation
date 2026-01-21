@@ -86,9 +86,9 @@ public class Dades implements InDades, Serializable{
             beneficis = potencia;
         }
         cost_op = reactor.getCostOperatiu() + sistemaRefrigeracio.getCostOperatiu() + generadorVapor.getCostOperatiu() + turbina.getCostOperatiu();
-        guanys_acu = beneficis - penalitzacio - cost_op + guanysAcumulats;
+        guanysAcumulats += beneficis - penalitzacio - cost_op;
         
-        return new PaginaEconomica(dia, beneficis, penalitzacio, cost_op, guanys_acu);
+        return new PaginaEconomica(dia, beneficis, penalitzacio, cost_op, guanysAcumulats);
         
     }
 
@@ -323,5 +323,17 @@ public class Dades implements InDades, Serializable{
     @Override
     public List<PaginaIncidencies> mostraIncidencies() {
         return bitacola.getIncidencies();
+    }
+    
+    public String getDia(){
+        return String.valueOf(dia);
+    }
+    
+    public String getGuanys(){
+        return String.valueOf(guanysAcumulats);
+    }
+    
+    public boolean getActivitatReactor(){
+        return reactor.getActivitat();
     }
 }

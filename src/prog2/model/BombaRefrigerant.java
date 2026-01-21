@@ -68,6 +68,10 @@ public class BombaRefrigerant implements InBombaRefrigerant, Serializable{
     public boolean getActivat() {
         return active;
     }
+    
+    public void setActivat(boolean active) {
+        this.active = active;
+    }
 
     /**
      * Revisa la bomba refrigerant. Es farà servir l'objecte de tipus 

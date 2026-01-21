@@ -101,4 +101,8 @@ public class Reactor implements InComponent, Serializable{
         else return temp + (100 - input) * 10;
     }
     
+    public boolean getActivitat(){
+        return active;
+    }
+    
 }

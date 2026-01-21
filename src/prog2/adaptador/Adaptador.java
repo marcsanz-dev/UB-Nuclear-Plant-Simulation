@@ -10,8 +10,10 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import prog2.model.BombaRefrigerant;
 import prog2.model.Dades;
 import prog2.model.PaginaIncidencies;
 import prog2.vista.CentralUBException;
@@ -26,7 +28,11 @@ import prog2.vista.CentralUBException;
  * 
  */
 public class Adaptador implements Serializable{
-    private Dades dades = new Dades();
+    private Dades dades;
+
+    public Adaptador() {
+        dades = new Dades();
+    }
     /**
      * Retorna un String que diu el porcentatge 
      * de barres que s'han inserit.
@@ -177,8 +183,62 @@ public class Adaptador implements Serializable{
         
         }
         catch(Exception e){
-            System.out.println(e);
+            throw new CentralUBException("No se ha podido abrir bien el archivo");
         }
         dades = model;
+    }
+    
+    public String getDia(){
+        return dades.getDia();
+    }
+    
+    public String getGuanys(){
+        return dades.getGuanys();
+    }
+    
+    public ArrayList<String> getBombesString(){
+        ArrayList<BombaRefrigerant> bombes = dades.mostraSistemaRefrigeracio().getBombes();
+        Iterator<BombaRefrigerant> it = bombes.iterator();
+        ArrayList<String> str = new ArrayList<String>();
+        while(it.hasNext()){
+            str.add(it.next().toString());
+        }
+        return str;
+    }
+    
+    public boolean getEstatID(int id) throws CentralUBException{
+        ArrayList<BombaRefrigerant> bombes = dades.mostraSistemaRefrigeracio().getBombes();
+        Iterator<BombaRefrigerant> it = bombes.iterator();
+        while(it.hasNext()){
+            BombaRefrigerant bomba = it.next();
+            if(bomba.getId() == id){
+                return bomba.getActivat();
+            }
+        }
+        throw new CentralUBException("No hi ha cap bomba amb l'ID: " + id);
+       
+    }
+    
+    public void setEstatID(int id, boolean active) throws CentralUBException{
+        ArrayList<BombaRefrigerant> bombes = dades.mostraSistemaRefrigeracio().getBombes();
+        Iterator<BombaRefrigerant> it = bombes.iterator();
+        while(it.hasNext()){
+            BombaRefrigerant bomba = it.next();
+            if(bomba.getId() == id){
+                if(active)bomba.activa();
+                else bomba.desactiva();
+                return;
+            }
+        }
+        throw new CentralUBException("No hi ha cap bomba amb l'ID: " + id);
+       
+    }
+    
+    public boolean getActivitatReactor(){
+        return dades.getActivitatReactor();
+    }
+    
+    public float getBarres(){
+        return dades.getInsercioBarres();
     }
 }
